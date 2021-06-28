@@ -16,7 +16,7 @@ program
   .action((apps, { overwrite }) => {
     Promise.all(
       apps.map(async (appName) => {
-        const spinner = ora(`Resolving formula '${appName}'...`).start();
+        const spinner = ora(`Resolving app '${appName}'...`).start();
 
         let cleanup = () => {};
 
