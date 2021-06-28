@@ -8,6 +8,9 @@ build({
   minify: true,
   sourcemap: true,
   entryPoints: ["src/cli.ts"],
+  banner: {
+    js: "#!/usr/bin/env node",
+  },
   platform: "node",
   plugins: [
     NodeResolve.default({
