@@ -1,6 +1,6 @@
 import Ajv, { JSONSchemaType } from "ajv";
 
-import addFormats from 'ajv-formats';
+import addFormats from "ajv-formats";
 
 import { AppManifest } from "./types";
 
@@ -9,7 +9,8 @@ const schema: JSONSchemaType<AppManifest> = {
   properties: {
     name: { type: "string" },
     url: { type: "string", format: "uri" },
-    icon: { type: "string", nullable: true }
+    icon: { type: "string", nullable: true },
+    titleBar: { type: "boolean", default: true, nullable: true },
   },
   required: ["name", "url"],
   additionalProperties: false,

@@ -1,6 +1,7 @@
 export interface AppManifest {
   name: string;
   url: string;
+  titleBar?: boolean;
   icon?: string;
 }
 
