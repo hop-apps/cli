@@ -1,48 +1,42 @@
 import axios from "axios";
 import yaml from "js-yaml";
-import tmp from "tmp";
 
 import { createWriteStream } from "fs";
 
-import validateManifest from "./validateManifest";
+import { validateManifest } from "./validateManifest";
+import { createTempDir } from "./createTempDir";
 
-import { App, AppManifest } from "./types";
+import { App, AppManifest } from "../../types";
 
 const downloadIcon = async (
   appName: string
 ): Promise<{ path: string; cleanup: () => void }> => {
   const url = `https://raw.githubusercontent.com/Nickersoft/hop/master/apps/${appName}/icon.png`;
 
+  const { path, cleanup } = await createTempDir();
+
+  const output = `${path}/icon.png`;
+
+  const { data } = await axios({
+    method: "GET",
+    url: url,
+    responseType: "stream",
+  });
+
+  data.pipe(createWriteStream(output));
+
   return new Promise((resolve, reject) => {
-    tmp.dir({ keep: true }, (err, path, cleanup) => {
-      if (err) {
-        throw err;
-      } else {
-        const output = `${path}/icon.png`;
+    data.on("end", () => {
+      resolve({ path: output, cleanup });
+    });
 
-        axios({
-          method: "GET",
-          url: url,
-          responseType: "stream",
-        })
-          .then(({ data }) => {
-            data.pipe(createWriteStream(output));
-
-            data.on("end", () => {
-              resolve({ path: output, cleanup });
-            });
-
-            data.on("error", (err) => {
-              reject(err);
-            });
-          })
-          .catch((err) => reject(err));
-      }
+    data.on("error", (err) => {
+      reject(err);
     });
   });
 };
 
-export default async (appName: string): Promise<App> => {
+export const resolveApp = async (appName: string): Promise<App> => {
   const manifestUrl = `https://raw.githubusercontent.com/Nickersoft/hop/master/apps/${appName}/manifest.yml`;
 
   try {
