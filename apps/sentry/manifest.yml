@@ -1,0 +1,3 @@
+name: Sentry
+url: https://sentry.io/auth/login/
+description: Open-source error tracking with full stacktraces & asynchronous context.
