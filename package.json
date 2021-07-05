@@ -35,5 +35,7 @@
     "@types/prettier": "^2",
     "@types/tmp": "^0"
   },
-  "bin": "./bin/cli.js"
+  "bin": {
+    "hop": "./bin/cli.js"
+  }
 }
