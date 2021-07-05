@@ -1,5 +1,5 @@
 {
-  "name": "hop",
+  "name": "@hopping/cli",
   "version": "0.0.1",
   "description": "Like Homebrew Casks, for Progressive Web Apps!",
   "main": "bin/main.js",
@@ -35,5 +35,6 @@
     "@types/prettier": "^2",
     "@types/tmp": "^0"
   },
+  "private": false,
   "bin": "./bin/cli.js"
 }

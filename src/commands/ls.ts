@@ -5,6 +5,9 @@ import { Command } from "commander";
 import octokit from "../octokit";
 import config from "../config";
 
+/**
+ * Lists all web apps available for download via Octokit.
+ */
 export const ls = new Command("ls").action(async () => {
   const spinner = ora({ hideCursor: true }).start();
 
