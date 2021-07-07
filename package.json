@@ -1,6 +1,6 @@
 {
-  "name": "hop",
-  "version": "0.0.1",
+  "name": "@hopping/cli",
+  "version": "0.0.4",
   "description": "Like Homebrew Casks, for Progressive Web Apps!",
   "main": "bin/main.js",
   "repository": "https://github.com/Nickersoft/hop",
@@ -8,8 +8,8 @@
   "scripts": {
     "build": "node ./scripts/build.js && chmod +x ./bin/cli.js",
     "start": "node bin/cli.js",
-    "prepare": "yarn build",
-    "postinstall": "patch-package && yarn build"
+    "prepare": "npm run build",
+    "postinstall": "patch-package && npm run build"
   },
   "dependencies": {
     "@esbuild-plugins/node-resolve": "^0.1.4",
@@ -35,5 +35,7 @@
     "@types/prettier": "^2",
     "@types/tmp": "^0"
   },
-  "bin": "./bin/cli.js"
+  "bin": {
+    "hop": "./bin/cli.js"
+  }
 }

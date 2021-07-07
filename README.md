@@ -12,6 +12,16 @@ With Hop, installing a beautiful, pre-made version of your favorite app is as si
 
 ![Hop](./assets/hop.gif)
 
+## Installing
+
+To get started with Hop, you'll need to install it globally:
+
+```
+npm install -g @hopping/cli
+```
+
+Then just run `hop` from any directory!
+
 ## How It Works
 
 Similar to Homebrew, all of the apps supported by Hop are stored in this repository, under the `apps` folder. Each app has a manifest and an optional icon.

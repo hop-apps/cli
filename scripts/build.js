@@ -1,6 +1,10 @@
+const path = require("path");
+
 const { build } = require("esbuild");
 
 const NodeResolve = require("@esbuild-plugins/node-resolve");
+
+const nodeModulesDirectory = path.join(__dirname, "..", "node_modules");
 
 build({
   outdir: "bin",
@@ -16,7 +20,7 @@ build({
     NodeResolve.default({
       extensions: [".ts", ".js"],
       onResolved: (resolved) => {
-        if (resolved.includes("node_modules")) {
+        if (resolved.includes(nodeModulesDirectory)) {
           return {
             external: true,
           };
