@@ -1,5 +1,3 @@
-import ora from "ora";
-
 import { Command } from "commander";
 
 import { resolveApp, buildApp, installApp } from "./utils";
@@ -10,6 +8,8 @@ export const install = new Command("install")
   .action((apps, { overwrite }) => {
     Promise.all(
       apps.map(async (appName) => {
+        const { default: ora } = await import("ora");
+
         const spinner = ora(`Resolving app '${appName}'...`).start();
 
         let cleanup = () => {};

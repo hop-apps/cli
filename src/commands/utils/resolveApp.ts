@@ -63,7 +63,7 @@ export const resolveApp = async (appName: string): Promise<App> => {
 
     return { manifest: config as AppManifest, icon, cleanup: cleanupFunc };
   } catch (error) {
-    if (error.response.status === 404) {
+    if ((error as any).response.status === 404) {
       throw new Error(`Couldn't find app: ${appName}. Skipping installation.`);
     } else {
       throw error;
