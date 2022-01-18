@@ -1873,7 +1873,7 @@ __metadata:
 
 nativefier@Nickersoft/nativefier:
   version: 46.0.4
-  resolution: "nativefier@https://github.com/Nickersoft/nativefier.git#commit=d68fed43a55949bbbc8bd63edec9e14240540371"
+  resolution: "nativefier@https://github.com/Nickersoft/nativefier.git#commit=9157480840bf8da2e2fb9492d51b637e8b351620"
   dependencies:
     axios: ^0.24.0
     electron-packager: ^15.2.0
@@ -1889,7 +1889,7 @@ nativefier@Nickersoft/nativefier:
     yargs: ^17.1.1
   bin:
     nativefier: lib/cli.js
-  checksum: c808ca045190e5a47f6e986588aa0b02aa3833dc315de9f53c9b2476b66087e439c3dc2faf8acdc878b8cad32025568dd5493352e2b482c9a9f48f66cba505a5
+  checksum: d683eb52f314ce80fe82e61575be70d85687d61bb6244787d7937e23090c52158252745fb9689df092df2c0d9c30a7b4bb25f5abb56543aaa65770643c14913e
   languageName: node
   linkType: hard
 
