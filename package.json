@@ -9,28 +9,27 @@
     "build": "node ./scripts/build.js && chmod +x ./bin/cli.js",
     "start": "node bin/cli.js",
     "prepare": "npm run build",
-    "postinstall": "patch-package && npm run build"
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "@esbuild-plugins/node-resolve": "^0.1.4",
     "@octokit/rest": "^18.12.0",
-    "ajv": "^8.8.2",
+    "ajv": "^8.9.0",
     "ajv-formats": "^2.1.1",
-    "axios": "^0.24.0",
+    "axios": "^0.25.0",
     "commander": "^8.3.0",
-    "esbuild": "^0.14.2",
+    "esbuild": "^0.14.11",
     "fs-extra": "^10.0.0",
     "js-yaml": "^4.1.0",
-    "nativefier": "45.0.8",
+    "nativefier": "Nickersoft/nativefier",
     "ora": "^6.0.1",
-    "patch-package": "^6.4.7",
     "prettier": "^2.5.1",
     "tmp": "^0.2.1",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.4"
   },
   "devDependencies": {
     "@types/js-yaml": "^4",
-    "@types/node": "^16.11.12",
+    "@types/node": "^17.0.10",
     "@types/prettier": "^2",
     "@types/tmp": "^0"
   },
