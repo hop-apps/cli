@@ -35,7 +35,7 @@ export const install = new Command("install")
           cleanup();
 
           spinner.succeed(`Successfully installed ${name}!`);
-        } catch (error) {
+        } catch (error: any) {
           spinner.fail(
             `Failed to install ${appName} with error: "${error.toString()}"`
           );
