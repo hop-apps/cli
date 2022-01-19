@@ -21,7 +21,7 @@
     "esbuild": "^0.14.11",
     "fs-extra": "^10.0.0",
     "js-yaml": "^4.1.0",
-    "nativefier": "Nickersoft/nativefier",
+    "nativefier": "46.0.4",
     "ora": "^6.0.1",
     "prettier": "^2.5.1",
     "tmp": "^0.2.1",
@@ -35,5 +35,8 @@
   },
   "bin": {
     "hop": "./bin/cli.js"
+  },
+  "resolutions": {
+    "nativefier@46.0.4": "patch:nativefier@npm:46.0.4#.yarn/patches/nativefier-npm-46.0.4-f46322c83d"
   }
 }

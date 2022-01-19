@@ -58,7 +58,7 @@ __metadata:
     esbuild: ^0.14.11
     fs-extra: ^10.0.0
     js-yaml: ^4.1.0
-    nativefier: Nickersoft/nativefier
+    nativefier: 46.0.4
     ora: ^6.0.1
     prettier: ^2.5.1
     tmp: ^0.2.1
@@ -1855,9 +1855,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-nativefier@Nickersoft/nativefier:
+"nativefier@npm:46.0.4":
   version: 46.0.4
-  resolution: "nativefier@https://github.com/Nickersoft/nativefier.git#commit=6fef8028cb4400cb62111e7d85c09d625f4da784"
+  resolution: "nativefier@npm:46.0.4"
   dependencies:
     axios: ^0.24.0
     electron-packager: ^15.2.0
@@ -1873,7 +1873,29 @@ nativefier@Nickersoft/nativefier:
     yargs: ^17.1.1
   bin:
     nativefier: lib/cli.js
-  checksum: 9085b24a31332d7f8e3f6ba0d0a215c4bad50f1b1fd3801fc7267ca10dae3d748a8da4916ad755fcd69e140d77d5e28c4751286ce06077ad43f0dd45e0397c13
+  checksum: 9fe239c389345bd75b345884b66e48a7ee02f9be060475e00e084360f6136143d97ebdf9e40cde6ed5b56be92890c6a439db143362bdd69338002dad7722699c
+  languageName: node
+  linkType: hard
+
+"nativefier@patch:nativefier@npm:46.0.4#.yarn/patches/nativefier-npm-46.0.4-f46322c83d::locator=%40hopping%2Fcli%40workspace%3A.":
+  version: 46.0.4
+  resolution: "nativefier@patch:nativefier@npm%3A46.0.4#.yarn/patches/nativefier-npm-46.0.4-f46322c83d::version=46.0.4&hash=1fa4f2&locator=%40hopping%2Fcli%40workspace%3A."
+  dependencies:
+    axios: ^0.24.0
+    electron-packager: ^15.2.0
+    fs-extra: ^10.0.0
+    gitcloud: ^0.2.3
+    hasbin: ^1.2.3
+    loglevel: ^1.7.1
+    ncp: ^2.0.0
+    page-icon: ^0.4.0
+    sanitize-filename: ^1.6.3
+    source-map-support: ^0.5.19
+    tmp: ^0.2.1
+    yargs: ^17.1.1
+  bin:
+    nativefier: lib/cli.js
+  checksum: a2c9a2b90af96119c65294c9b37e7f18cf416cb8d5e43d04ca10816e3d5fdf96c8a49f2a4b56c8931a3a75b898018c85a0c9ca631778c0d61309f43683183957
   languageName: node
   linkType: hard
 
