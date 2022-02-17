@@ -1,6 +1,6 @@
 {
   "name": "@hopping/cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Like Homebrew Casks, for Progressive Web Apps!",
   "main": "bin/main.js",
   "repository": "https://github.com/Nickersoft/hop",
