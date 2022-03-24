@@ -23,4 +23,6 @@ addFormats(ajv);
 
 const validate = ajv.compile(schema);
 
-export const validateManifest = (obj: object) => validate(obj);
+export function validateManifest(obj: object) {
+  return validate(obj);
+}

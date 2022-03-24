@@ -1,10 +1,12 @@
 import tmp from "tmp";
 
-export const createTempDir: () => Promise<{
+type TempDir = {
   path: string;
   cleanup: () => void;
-}> = () =>
-  new Promise((resolve, reject) => {
+};
+
+export function createTempDir(): Promise<TempDir> {
+  return new Promise((resolve, reject) => {
     tmp.dir({ keep: true }, (err, path, cleanup) => {
       if (err) {
         reject(err);
@@ -13,3 +15,4 @@ export const createTempDir: () => Promise<{
       }
     });
   });
+}

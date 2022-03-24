@@ -1,7 +1,7 @@
 import { readdirSync, moveSync } from "fs-extra";
 import { join } from "path";
 
-export const installApp = (appPath: string, overwrite: boolean = false) => {
+export function installApp(appPath: string, overwrite: boolean = false) {
   const files = readdirSync(appPath);
   const file = files.filter((filter) => filter.endsWith(".app"))?.[0];
 
@@ -10,4 +10,4 @@ export const installApp = (appPath: string, overwrite: boolean = false) => {
   }
 
   moveSync(join(appPath, file), `/Applications/${file}`, { overwrite });
-};
+}

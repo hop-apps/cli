@@ -2,15 +2,17 @@ import config from "../../config";
 
 import { buildNativefierApp } from "nativefier";
 import { App } from "../../types";
-import { createTempDir } from "./createTempDir";
+import { createTempDir } from "./create-temp-dir";
 
-export const buildApp = async ({
-  manifest,
-  cleanup: appCleanup,
-  icon,
-}: App): Promise<{ path: string; cleanup: () => void }> => {
+type BuildOutput = {
+  path: string;
+  cleanup: () => void;
+};
+
+export async function buildApp(app: App): Promise<BuildOutput> {
   process.env["ELECTRON_ENABLE_LOGGING"] = "false";
 
+  const { manifest, cleanup: appCleanup, icon } = app;
   const { path, cleanup } = await createTempDir();
 
   const appPath = await buildNativefierApp({
@@ -31,10 +33,10 @@ export const buildApp = async ({
       path: appPath,
       cleanup: () => {
         cleanup();
-        appCleanup();
+        appCleanup?.();
       },
     };
   } else {
     throw new Error("App path is undefined! Not sure what happened :/");
   }
-};
+}

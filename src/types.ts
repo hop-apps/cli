@@ -1,6 +1,7 @@
 export interface AppManifest {
   name: string;
   url: string;
+  description: string;
   titleBar?: boolean;
   icon?: string;
 }
@@ -8,5 +9,5 @@ export interface AppManifest {
 export interface App {
   manifest: AppManifest;
   icon: string | null;
-  cleanup: () => void;
+  cleanup?: () => void;
 }
