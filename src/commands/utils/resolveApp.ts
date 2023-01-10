@@ -11,7 +11,7 @@ import { App, AppManifest } from "../../types";
 const downloadIcon = async (
   appName: string
 ): Promise<{ path: string; cleanup: () => void }> => {
-  const url = `https://raw.githubusercontent.com/Nickersoft/hop/master/apps/${appName}/icon.png`;
+  const url = `https://raw.githubusercontent.com/hop-apps/catalog/master/apps/${appName}/icon.png`;
 
   const { path, cleanup } = await createTempDir();
 
@@ -37,7 +37,7 @@ const downloadIcon = async (
 };
 
 export const resolveApp = async (appName: string): Promise<App> => {
-  const manifestUrl = `https://raw.githubusercontent.com/Nickersoft/hop/master/apps/${appName}/manifest.yml`;
+  const manifestUrl = `https://raw.githubusercontent.com/hop-apps/catalog/master/apps/${appName}/manifest.yml`;
 
   try {
     const { data } = await axios.get(manifestUrl);
